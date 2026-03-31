@@ -2,4 +2,21 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Colores principales -->
+    <color name="primaryColor">#34A853</color>
+    <color name="secondaryColor">#333333</color>
+    <color name="tertiaryColor">#2d501665</color>
+    <!-- Colores de los textos -->
+    <color name="textPrimary">#000000</color>
+    <color name="textSecondary">#2D5016</color>"
+    <!-- Colores de fondo -->
+    <color name="backgroundPrimary">#FFFFFF</color>
+    <color name="backgroundSecondary">#F5F5F5</color>
+    <color name="backgroundBackground">#333333</color>
+    <!-- Bordes -->
+    <color name="borderColor">#E0E0E0</color>
+    <!-- Sombras -->
+    <color name="shadowColor">#1A000000</color>
+
 </resources>
