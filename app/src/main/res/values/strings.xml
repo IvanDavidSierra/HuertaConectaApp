@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">HuertaConectaApp</string>
+    <string name="tvLogin">Iniciar sesion</string>
+    <string name="etCorreo">Ingresa tu correo</string>
+    <string name="etContraseña">Ingresa tu contraseña</string>
+    <string name="cbRecordar">Recordar contraseña</string>
+    <string name="btnIngresar">Ingresar"</string>
 </resources>
