@@ -11,35 +11,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/tvLogin"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        android:textColor="@color/primaryColor"/>
+        android:text="@string/home"/>
 
-    <EditText
-        android:id="@+id/etCorreo"
+    <androidx.drawerlayout.widget.DrawerLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:hint="@string/etCorreo"
-        android:inputType="textEmailAddress"/>
-    <EditText
-        android:id="@+id/etContraseña"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:hint="@string/etContraseña"
-        android:inputType="textPassword"/>
-
-    <CheckBox
-        android:id="@+id/cbRecordar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:text="@string/cbRecordar"/>
-
-    <Button
-        android:id="@+id/btnIngresar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/btnIngresar"/>
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

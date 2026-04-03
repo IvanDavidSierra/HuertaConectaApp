@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.Register"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tvRegister"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textColor="@color/primaryColor"/>
+
+    <EditText
+        android:id="@+id/etNombres"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:hint="@string/etNombres"
+        android:autofillHints="name"
+        android:inputType="textPersonName"/>
+    <EditText
+        android:id="@+id/etApellidos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:hint="@string/etApellidos"
+        android:autofillHints="lastName"
+        android:inputType="textPersonName"/>
+    <EditText
+        android:id="@+id/etRegisterCorreo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:hint="@string/etRegisterCorreo"
+        android:autofillHints="emailAddress"
+        android:inputType="textEmailAddress"/>
+    <EditText
+        android:id="@+id/etRegisterContraseña"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:hint="@string/etRegisterContraseña"
+        android:autofillHints="password"
+        android:inputType="textPassword"/>
+    <EditText
+        android:id="@+id/etRegisterContraseña2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:hint="@string/etRegisterContraseña2"
+        android:autofillHints="password"
+        android:inputType="textPassword"/>
+
+    <CheckBox
+        android:id="@+id/cbTerminos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cbTerminos"/>
+
+    <Button
+        android:id="@+id/btnIngresar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btnIngresar"/>
+</LinearLayout>
