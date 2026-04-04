@@ -38,7 +38,7 @@
         android:autofillHints="emailAddress"
         android:inputType="textEmailAddress"/>
     <EditText
-        android:id="@+id/etRegisterContraseña"
+        android:id="@+id/etRegisterContrasena"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="48dp"
@@ -46,7 +46,7 @@
         android:autofillHints="password"
         android:inputType="textPassword"/>
     <EditText
-        android:id="@+id/etRegisterContraseña2"
+        android:id="@+id/etRegisterContrasena2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="48dp"
