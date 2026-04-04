@@ -1,14 +1,26 @@
 <resources>
     <string name="app_name">HuertaConectaApp</string>
 
-    <string name="home">Home</string>
+    <string name="open_nav">Open Navigation Drawer</string>
+    <string name="close_nav">Close Navigation Drawer</string>
 
+    <string name="home">Home</string>
+    <string name="about">Nosotros</string>
+    <string name="service">Servicios</string>
+    <string name="howItWorks">Cómo Funciona</string>
+    <string name="contact">Contacto</string>
+    <string name="auth">Autenticación</string>
+
+    <!-- Texto de nav header-->
+    <string name="user">Usuario</string>
+    <string name="image">Imagen usuario</string>
+    <!-- Texto de login -->
     <string name="tvLogin">Iniciar sesion</string>
     <string name="etCorreo">Ingresa tu correo</string>
     <string name="etContraseña">Ingresa tu contraseña</string>
     <string name="cbRecordar">Recordar contraseña</string>
-    <string name="btnIngresar">Ingresar"</string>
-
+    <string name="btnIngresar">Ingresar</string>
+    <!-- Texto de register -->
     <string name="tvRegister">Registrarse</string>
     <string name="etNombres">Tus nombres</string>
     <string name="etApellidos">Tus apellidos</string>
@@ -16,6 +28,8 @@
     <string name="etRegisterContraseña">Tu contraseña</string>
     <string name="etRegisterContraseña2">Confirma tu contraseña</string>
     <string name="cbTerminos">Acepto los términos y condiciones</string>
-    <string name="btnRegister">"Registrarse"</string>
+    <string name="btnRegister">Registrarse</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
