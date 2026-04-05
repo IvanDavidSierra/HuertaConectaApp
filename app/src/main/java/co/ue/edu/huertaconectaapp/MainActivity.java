@@ -2,6 +2,7 @@ package co.ue.edu.huertaconectaapp;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -22,6 +23,7 @@ import co.ue.edu.huertaconectaapp.views.ContactFragment;
 import co.ue.edu.huertaconectaapp.views.HomeFragment;
 import co.ue.edu.huertaconectaapp.views.HowItWorksFragment;
 import co.ue.edu.huertaconectaapp.views.LoginFragment;
+import co.ue.edu.huertaconectaapp.views.RegisterFragment;
 import co.ue.edu.huertaconectaapp.views.ServicesFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     HowItWorksFragment howItWorksFragment = new HowItWorksFragment();
     ContactFragment contactFragment = new ContactFragment();
     LoginFragment loginFragment = new LoginFragment();
+    RegisterFragment registerFragment = new RegisterFragment();
 
 
     @Override
@@ -56,15 +59,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
-        loadFragment(homeFragment);
+        loadFragment(loginFragment);
+        showMenu(false);
 
 
     }
 
-    private void loadFragment(Fragment fragment) {
+    public void loadFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_container, fragment);
         transaction.commit();
+    }
+    public void showMenu(boolean show) {
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        if (show) {
+            toolbar.setVisibility(View.VISIBLE);
+        } else {
+            toolbar.setVisibility(View.GONE);
+        }
     }
 
     @Override

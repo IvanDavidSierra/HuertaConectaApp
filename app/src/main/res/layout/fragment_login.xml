@@ -40,5 +40,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/btnIngresar"/>
+    <TextView
+        android:id="@+id/tvRegistrate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="¿No tienes cuenta? Registrate"
+        android:layout_marginTop="16dp"/>
 
 </LinearLayout>

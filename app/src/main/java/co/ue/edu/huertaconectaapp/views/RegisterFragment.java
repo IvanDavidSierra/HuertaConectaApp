@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import co.ue.edu.huertaconectaapp.MainActivity;
 import co.ue.edu.huertaconectaapp.R;
 import co.ue.edu.huertaconectaapp.controller.AuthController;
 import co.ue.edu.huertaconectaapp.model.AuthResult;
@@ -25,7 +26,7 @@ import retrofit2.Response;
  * create an instance of this fragment.
  */
 public class RegisterFragment extends Fragment {
-    private EditText etNombres, etApellidos, etCorreo, etContrasena;
+    private EditText etNombres, etApellidos, etCorreo, etContrasena, etContrasena2;
     private Button btnIngresar;
     private AuthController authController;
 
@@ -75,44 +76,47 @@ public class RegisterFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_register,container,false);
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_register, container, false);
+        initObjects(view);
+        return view;
 
     }
     private void initObjects(View view){
         etNombres = view.findViewById(R.id.etNombres);
         etApellidos = view.findViewById(R.id.etApellidos);
-        etCorreo = view.findViewById(R.id.etCorreo);
-        etContrasena = view.findViewById(R.id.etContrasena);
+        etCorreo = view.findViewById(R.id.etRegisterCorreo);
+        etContrasena = view.findViewById(R.id.etRegisterContrasena);
+        etContrasena2 = view.findViewById(R.id.etRegisterContrasena2);
         btnIngresar = view.findViewById(R.id.btnIngresar);
         authController = new AuthController();
         btnIngresar.setOnClickListener(v->register());
     }
-    private void register(){
+    private void register() {
         String nombre = etNombres.getText().toString();
         String apellido = etApellidos.getText().toString();
         String correo = etCorreo.getText().toString();
         String contrasena = etContrasena.getText().toString();
 
-        UserRegister user = new UserRegister(nombre,apellido,correo,contrasena,1);
-        authController.register(user, new Callback<AuthResult>() {
+        UserRegister user = new UserRegister(nombre, apellido, correo, contrasena, 1);
+        authController.register(user, new AuthController.AuthListener() {
             @Override
-            public void onResponse(Call<AuthResult> call, Response<AuthResult> response) {
-                if(response.isSuccessful()){
-                    Toast.makeText(getContext(),"Registro exitoso",Toast.LENGTH_SHORT).show();
-                }else {
-                    Toast.makeText(getContext(),"Error: " + response.message(),Toast.LENGTH_SHORT).show();
-                }
+            public void onSuccess(AuthResult result) {
+                requireActivity().runOnUiThread(()->{
+                    Toast.makeText(getContext(), "Registro exitoso", Toast.LENGTH_SHORT).show();
+                    ((MainActivity) getActivity()).loadFragment(new LoginFragment());
+                });
             }
 
             @Override
-            public void onFailure(Call<AuthResult> call, Throwable throwable) {
-                Toast.makeText(getContext(),"Fallo: " + throwable.getMessage(),Toast.LENGTH_SHORT).show();
-
+            public void onError(String message) {
+                requireActivity().runOnUiThread(()->{
+                    Toast.makeText(getContext(), "Error: " + message, Toast.LENGTH_SHORT).show();
+                });
             }
+
+
         });
+
+
     }
-
-
 
 }

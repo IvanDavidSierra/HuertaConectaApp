@@ -1,14 +1,30 @@
     package co.ue.edu.huertaconectaapp.views;
 
+    import android.graphics.Color;
     import android.os.Bundle;
 
+    import androidx.annotation.NonNull;
     import androidx.fragment.app.Fragment;
 
+    import android.text.SpannableString;
+    import android.text.method.LinkMovementMethod;
+    import android.text.style.ClickableSpan;
+    import android.text.style.ForegroundColorSpan;
     import android.view.LayoutInflater;
     import android.view.View;
     import android.view.ViewGroup;
+    import android.widget.Button;
+    import android.widget.EditText;
+    import android.widget.TextView;
+    import android.widget.Toast;
 
+    import org.w3c.dom.Text;
+
+    import co.ue.edu.huertaconectaapp.MainActivity;
     import co.ue.edu.huertaconectaapp.R;
+    import co.ue.edu.huertaconectaapp.controller.AuthController;
+    import co.ue.edu.huertaconectaapp.model.AuthResult;
+    import co.ue.edu.huertaconectaapp.model.UserLogin;
 
     /**
      * A simple {@link Fragment} subclass.
@@ -16,6 +32,10 @@
      * create an instance of this fragment.
      */
     public class LoginFragment extends Fragment {
+        private EditText etCorreo, etContrasena;
+        private Button btnIngresar;
+        private AuthController authController;
+
 
         // TODO: Rename parameter arguments, choose names that match
         // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -60,7 +80,55 @@
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            // Inflate the layout for this fragment
-            return inflater.inflate(R.layout.fragment_login, container, false);
+            View view = inflater.inflate(R.layout.fragment_login, container, false);
+            ((MainActivity) getActivity()).showMenu(false);
+            initObjects(view);
+            return view;
         }
+
+        private void initObjects(View view){
+            etCorreo = view.findViewById(R.id.etCorreo);
+            etContrasena = view.findViewById(R.id.etContrasena);
+            btnIngresar = view.findViewById(R.id.btnIngresar);
+            authController = new AuthController();
+            btnIngresar.setOnClickListener(v-> login());
+            TextView tvRegistrate = view.findViewById(R.id.tvRegistrate);
+            SpannableString span = new SpannableString("¿No tienes cuenta? Registrate");
+            span.setSpan(new ForegroundColorSpan(Color.parseColor("#6200EE")),19,29,0);
+            span.setSpan(new ClickableSpan() {
+                @Override
+                public void onClick(@NonNull View widget) {
+                    ((MainActivity) getActivity()).loadFragment(new RegisterFragment());
+                }
+            },19,29,0);
+            tvRegistrate.setText(span);
+            tvRegistrate.setMovementMethod(LinkMovementMethod.getInstance());
+
+        }
+
+        private void login(){
+            String correo = etCorreo.getText().toString();
+            String contrasena = etContrasena.getText().toString();
+
+            UserLogin userLogin = new UserLogin(correo,contrasena);
+            authController.login(userLogin, new AuthController.AuthListener() {
+                @Override
+                public void onSuccess(AuthResult result) {
+                    requireActivity().runOnUiThread(()->{
+                        ((MainActivity) getActivity()).showMenu(true);
+                        ((MainActivity) getActivity()).loadFragment(new HomeFragment());
+                    });
+                }
+
+                @Override
+                public void onError(String message) {
+                    requireActivity().runOnUiThread(()->{
+                        Toast.makeText(getContext(),"Error: " + message, Toast.LENGTH_SHORT).show();
+                    });
+                }
+            });
+
+        }
+
+
     }
