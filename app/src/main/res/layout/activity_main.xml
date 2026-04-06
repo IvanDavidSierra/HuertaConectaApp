@@ -1,45 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    tools:context=".MainActivity">
 
-
-    <TextView
+    <LinearLayout
+        android:id="@+id/content_main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/tvLogin"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        android:textColor="@color/primaryColor"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/etCorreo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:hint="@string/etCorreo"
-        android:inputType="textEmailAddress"/>
-    <EditText
-        android:id="@+id/etContraseña"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:hint="@string/etContraseña"
-        android:inputType="textPassword"/>
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:id="@+id/toolbar"
+            />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/fragment_container"/>
+    </LinearLayout>
 
-    <CheckBox
-        android:id="@+id/cbRecordar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:text="@string/cbRecordar"/>
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/nav_view"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_menu"
+        app:itemIconTint="@color/primaryColor"
+        app:itemTextColor="@color/textPrimary"/>
 
-    <Button
-        android:id="@+id/btnIngresar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/btnIngresar"/>
-
-</LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
