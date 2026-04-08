@@ -29,7 +29,37 @@
     <string name="etRegisterContraseña2">Confirma tu contraseña</string>
     <string name="cbTerminos">Acepto los términos y condiciones</string>
     <string name="btnRegister">Registrarse</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Contenido home -->
+    <string name="heroSliptTitle">Conecta tu huerta con el mundo</string>
+    <string name="heroSplitDesc">La plataforma para gestionar, aprender y compartir sobre agricultura sostenible.</string>
+    <string name="heroSplitBtn">Comenzar</string>
+
+    <string name="featureHeroTitle">¿Por qué elegir HuertaConecta?</string>
+    <string name="featureHeroDesc">Descubre las ventajas de nuestra plataforma para tu huerta y tu comunidad.</string>
+
+    <string name="featuresHeroItemTitle1">Gestión de Huertas</string>
+    <string name="featuresHeroItemDesc1">Administra y monitorea tus cultivos de manera sencilla y eficiente.</string>
+    <string name="featuresHeroItemTitle2">Comunidad</string>
+    <string name="featuresHeroItemDesc2">Conecta con otros productores y comparte experiencias.</string>
+    <string name="featuresHeroItemTitle3">Reportes Inteligentes</string>
+    <string name="featuresHeroItemDesc3">Visualiza el progreso y accede a reportes detallados.</string>
+    <string name="featuresHeroItemTitle4">Recursos y Aprendizaje</string>
+    <string name="featuresHeroItemDesc4">Accede a talleres, guías y recursos educativos.</string>
+    <string name="featuresHeroBtn">Descubre nuestros servicios</string>
+
+    <string name="featureTitle">Nuestros Servicios</string>
+    <string name="featureDesciption">Ofrecemos herramientas y asesoría para que puedas diseñar, gestionar y optimizar tu huerta desde cualquier lugar.</string>
+    <string name="featureListItemH1">Asesoría Personalizada</string>
+    <string name="featureListItemD1">Recibe recomendaciones y acompañamiento de expertos en agricultura urbana.</string>
+    <string name="featureListItemH2">Gestión Digital</string>
+    <string name="featureListItemD2">Administra tu huerta, registra cultivos y accede a recursos desde nuestra plataforma.</string>
+    <!-- Contenido about -->
+
+    <!-- Contenido service -->
+
+    <!-- Contenido how it works -->
+
+    <!-- Contenido contact -->
 
 </resources>
