@@ -1,14 +1,312 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true"
     tools:context=".views.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Home" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
 
-</LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="#F1F8E9"
+            app:strokeWidth="1dp"
+            app:strokeColor="#DCEDC8">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="32dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_hero_title"
+                    android:textAlignment="center"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="@dimen/text_hero"
+                    android:textStyle="bold"
+                    android:lineSpacingExtra="4dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/home_hero_description"
+                    android:textAlignment="center"
+                    android:textColor="@color/secondaryColor"
+                    android:textSize="@dimen/text_body"
+                    android:alpha="0.8"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_hero_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/home_hero_button"
+                    android:paddingHorizontal="40dp"
+                    android:paddingVertical="12dp"
+                    app:cornerRadius="30dp"
+                    android:backgroundTint="@color/primaryColor"
+                    android:textSize="@dimen/text_body"
+                    android:textAllCaps="false"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ¿Por que elegirnos? -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingVertical="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_benefits_title"
+                android:textSize="@dimen/text_title"
+                android:textStyle="bold"
+                android:textColor="@color/textPrimary"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/home_benefits_description"
+                android:textSize="@dimen/text_subtitle"
+                android:textColor="@color/textPrimary"
+                android:alpha="0.7"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_benefits_item1_title"
+                    android:textSize="@dimen/text_body"
+                    android:textStyle="bold"
+                    android:textColor="@color/primaryColor"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_benefits_item1_description"
+                    android:textSize="14sp"
+                    android:textColor="@color/secondaryColor"
+                    android:alpha="0.8"
+                    android:layout_marginBottom="16dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_benefits_item2_title"
+                    android:textSize="@dimen/text_body"
+                    android:textStyle="bold"
+                    android:textColor="@color/primaryColor"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_benefits_item2_description"
+                    android:textSize="14sp"
+                    android:textColor="@color/secondaryColor"
+                    android:alpha="0.8"
+                    android:layout_marginBottom="16dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_features_more"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/home_benefits_button"
+                    app:strokeColor="@color/primaryColor"
+                    android:textColor="@color/primaryColor"
+                    app:cornerRadius="12dp"
+                    android:textAllCaps="false"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EEEEEE"/>
+
+        <!-- Sobre nosotros -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingVertical="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_about_title"
+                android:textSize="@dimen/text_title"
+                android:textStyle="bold"
+                android:textColor="@color/textPrimary"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/home_about_description"
+                android:textSize="@dimen/text_subtitle"
+                android:textColor="@color/secondaryColor"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_about_item1_title"
+                android:textSize="@dimen/text_body"
+                android:textStyle="bold"
+                android:textColor="@color/primaryColor"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_about_item1_description"
+                android:textSize="14sp"
+                android:textColor="@color/secondaryColor"
+                android:alpha="0.8"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_about_item2_title"
+                android:textSize="@dimen/text_body"
+                android:textStyle="bold"
+                android:textColor="@color/primaryColor"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_about_item2_description"
+                android:textSize="14sp"
+                android:textColor="@color/secondaryColor"
+                android:alpha="0.8"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EEEEEE"/>
+
+        <!-- Nuestros servicios -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingVertical="24dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_services_title"
+                android:textSize="@dimen/text_title"
+                android:textStyle="bold"
+                android:textColor="@color/textPrimary"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/home_services_description"
+                android:textSize="@dimen/text_subtitle"
+                android:textColor="@color/textPrimary"
+                android:alpha="0.7"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_services_item1_title"
+                android:textSize="@dimen/text_body"
+                android:textStyle="bold"
+                android:textColor="@color/primaryColor"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/home_services_item1_description"
+                android:textSize="14sp"
+                android:textColor="@color/secondaryColor"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_services_item2_title"
+                android:textSize="@dimen/text_body"
+                android:textStyle="bold"
+                android:textColor="@color/primaryColor"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/home_services_item2_description"
+                android:textSize="14sp"
+                android:textColor="@color/secondaryColor"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EEEEEE"/>
+
+        <!-- SECCIÓN 5: CÓMO FUNCIONA -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingVertical="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_how_title"
+                android:textSize="@dimen/text_title"
+                android:textStyle="bold"
+                android:textColor="@color/textPrimary"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/home_how_description"
+                android:textSize="@dimen/text_subtitle"
+                android:textColor="@color/textPrimary"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_how_step1_title"
+                android:textSize="@dimen/text_body"
+                android:textStyle="bold"
+                android:textColor="@color/primaryColor"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/home_how_step1_description"
+                android:textSize="14sp"
+                android:textColor="@color/secondaryColor"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

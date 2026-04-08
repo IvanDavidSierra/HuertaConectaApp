@@ -29,7 +29,49 @@
     <string name="etRegisterContraseña2">Confirma tu contraseña</string>
     <string name="cbTerminos">Acepto los términos y condiciones</string>
     <string name="btnRegister">Registrarse</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Contenido fragment home -->
+    <string name="home_hero_title">Conecta tu huerta con el mundo</string>
+    <string name="home_hero_description">La plataforma para gestionar, aprender y compartir sobre agricultura sostenible.</string>
+    <string name="home_hero_button">Comenzar</string>
+
+    <string name="home_benefits_title">¿Por qué elegir HuertaConecta?</string>
+    <string name="home_benefits_description">Descubre las ventajas de nuestra plataforma para tu huerta y tu comunidad.</string>
+    <string name="home_benefits_item1_title">Gestión de Huertas</string>
+    <string name="home_benefits_item1_description">Administra y monitorea tus cultivos de manera sencilla y eficiente.</string>
+    <string name="home_benefits_item2_title">Comunidad</string>
+    <string name="home_benefits_item2_description">Conecta con otros productores y comparte experiencias.</string>
+    <string name="home_benefits_item3_title">Reportes Inteligentes</string>
+    <string name="home_benefits_item3_description">Visualiza el progreso y accede a reportes detallados.</string>
+    <string name="home_benefits_item4_title">Recursos y Aprendizaje</string>
+    <string name="home_benefits_item4_description">Accede a talleres, guías y recursos educativos.</string>
+    <string name="home_benefits_button">Descubre nuestros servicios</string>
+
+    <string name="home_about_title">Sobre nosotros</string>
+    <string name="home_about_description">Somos una comunidad apasionada por la agricultura urbana y la tecnología, dedicada a conectar personas que desean transformar sus espacios en huertas productivas y sostenibles.</string>
+    <string name="home_about_item1_title">Compromiso Social</string>
+    <string name="home_about_item1_description">Fomentamos la colaboración y el aprendizaje entre los miembros de la comunidad.</string>
+    <string name="home_about_item2_title">Innovación</string>
+    <string name="home_about_item2_description">Utilizamos tecnología para facilitar el acceso a recursos y conocimientos sobre huertas.</string>
+
+    <string name="home_services_title">Nuestros Servicios</string>
+    <string name="home_services_description">Ofrecemos herramientas y asesoría para que puedas diseñar, gestionar y optimizar tu huerta desde cualquier lugar.</string>
+    <string name="home_services_item1_title">Asesoría Personalizada</string>
+    <string name="home_services_item1_description">Recibe recomendaciones y acompañamiento de expertos en agricultura urbana.</string>
+    <string name="home_services_item2_title">Gestión Digital</string>
+    <string name="home_services_item2_description">Administra tu huerta, registra cultivos y accede a recursos desde nuestra plataforma.</string>
+
+    <string name="home_how_title">¿Cómo Funciona?</string>
+    <string name="home_how_description">Conéctate, diseña tu huerta y accede a una red de apoyo y recursos en solo tres pasos.</string>
+    <string name="home_how_step1_title">Diseña y Gestiona</string>
+    <string name="home_how_step1_description">Utiliza nuestras herramientas para planificar y monitorear tu huerta.</string>
+
+    <!-- Contenido about -->
+
+    <!-- Contenido service -->
+
+    <!-- Contenido how it works -->
+
+    <!-- Contenido contact -->
 
 </resources>
