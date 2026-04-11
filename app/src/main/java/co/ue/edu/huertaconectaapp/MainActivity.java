@@ -1,6 +1,7 @@
 package co.ue.edu.huertaconectaapp;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -18,7 +19,10 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationView;
 
+import co.ue.edu.huertaconectaapp.model.db.DatabaseHelper;
+import co.ue.edu.huertaconectaapp.model.db.dao.SesionDao;
 import co.ue.edu.huertaconectaapp.views.AboutFragment;
+import co.ue.edu.huertaconectaapp.views.CreateHuertaFragment;
 import co.ue.edu.huertaconectaapp.views.ContactFragment;
 import co.ue.edu.huertaconectaapp.views.HomeFragment;
 import co.ue.edu.huertaconectaapp.views.HowItWorksFragment;
@@ -35,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     ContactFragment contactFragment = new ContactFragment();
     LoginFragment loginFragment = new LoginFragment();
     RegisterFragment registerFragment = new RegisterFragment();
+
+    private SesionDao sesionDao;
 
 
     @Override
@@ -59,8 +65,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
-        loadFragment(loginFragment);
-        showMenu(false);
+        sesionDao = new SesionDao(DatabaseHelper.getInstance(this));
+
+        if (sesionDao.haySesionActiva()) {
+            loadFragment(homeFragment);
+            showMenu(true);
+        } else {
+            loadFragment(loginFragment);
+            showMenu(false);
+        }
 
 
     }
@@ -77,6 +90,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             toolbar.setVisibility(View.GONE);
         }
+        invalidateOptionsMenu();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        if (sesionDao != null && sesionDao.haySesionActiva()) {
+            getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+        }
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.action_nueva_huerta) {
+            loadFragment(new CreateHuertaFragment());
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -99,7 +130,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_contact) {
             loadFragment(contactFragment);
             return true;
-        }else if (id == R.id.nav_auth) {
+        } else if (id == R.id.nav_auth) {
+            sesionDao.cerrarSesion();
+            showMenu(false);
             loadFragment(loginFragment);
             return true;
         }

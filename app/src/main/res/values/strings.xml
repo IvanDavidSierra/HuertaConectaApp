@@ -9,7 +9,14 @@
     <string name="service">Servicios</string>
     <string name="howItWorks">Cómo Funciona</string>
     <string name="contact">Contacto</string>
-    <string name="auth">Autenticación</string>
+    <string name="auth">Cerrar sesión</string>
+    <string name="nueva_huerta">Nueva huerta</string>
+    <string name="crear_huerta">Crear Huerta</string>
+    <string name="nombre_huerta">Nombre de la huerta</string>
+    <string name="direccion_huerta">Dirección</string>
+    <string name="descripcion_huerta">Descripción</string>
+    <string name="btn_guardar">Guardar</string>
+    <string name="btn_cancelar">Cancelar</string>
 
     <!-- Texto de nav header-->
     <string name="user">Usuario</string>
