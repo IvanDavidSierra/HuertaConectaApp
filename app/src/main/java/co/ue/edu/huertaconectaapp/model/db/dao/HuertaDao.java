@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import co.ue.edu.huertaconectaapp.model.Huerta;
 import co.ue.edu.huertaconectaapp.model.db.DatabaseHelper;
 
 public class HuertaDao {
@@ -12,6 +13,30 @@ public class HuertaDao {
 
     public HuertaDao(DatabaseHelper dbHelper) {
         this.dbHelper = dbHelper;
+    }
+
+    /**
+     * Garantiza una fila en {@code huertas} con el id del API (requerido por FK de usuarios_huertas).
+     */
+    public void asegurarHuertaDesdeApi(Huerta h) {
+        if (h == null || h.getIdHuerta() <= 0) {
+            return;
+        }
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(DatabaseHelper.COL_ID_HUERTA, h.getIdHuerta());
+        String nombre = h.getNombreHuerta();
+        cv.put(DatabaseHelper.COL_NOMBRE_HUERTA,
+            (nombre != null && !nombre.isEmpty()) ? nombre : "Huerta");
+        cv.put(DatabaseHelper.COL_DIRECCION_HUERTA, h.getDireccionHuerta());
+        cv.put(DatabaseHelper.COL_DESCRIPCION, h.getDescripcion());
+        cv.put(DatabaseHelper.COL_FECHA_CREACION, h.getFechaCreacion());
+        db.insertWithOnConflict(
+            DatabaseHelper.TABLE_HUERTAS,
+            null,
+            cv,
+            SQLiteDatabase.CONFLICT_REPLACE
+        );
     }
 
     public long insertar(String nombreHuerta, String direccionHuerta,

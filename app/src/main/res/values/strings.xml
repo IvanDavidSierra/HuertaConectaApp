@@ -17,12 +17,46 @@
     <string name="descripcion_huerta">Descripción</string>
     <string name="btn_guardar">Guardar</string>
     <string name="btn_cancelar">Cancelar</string>
+    <string name="btn_publicar">Publicar</string>
+
+    <!-- Muro de publicaciones (miembros) -->
+    <string name="muro_subtitulo">Mural de la comunidad</string>
+    <string name="muro_subtitulo_solo_lectura">Solo lectura · Mural</string>
+    <string name="muro_nueva_publicacion">Nueva publicación</string>
+    <string name="muro_dialog_ayuda">Escribe un mensaje y, si quieres, añade una foto de tu cosecha o tu huerta.</string>
+    <string name="muro_sin_publicaciones">Aún no hay publicaciones.\nToca el botón para compartir algo con la huerta.</string>
+    <string name="muro_sin_publicaciones_solo_lectura">No hay publicaciones en esta huerta todavía.</string>
+    <string name="muro_pub_titulo_hint">Título (opcional)</string>
+    <string name="muro_pub_texto_hint">¿Qué quieres compartir?</string>
+    <string name="muro_elegir_imagen">Elegir imagen de la galería</string>
+    <string name="muro_pub_vacio">Escribe un mensaje o adjunta una imagen.</string>
+    <string name="muro_pub_sin_titulo">Publicación</string>
+    <string name="muro_pub_guardada">Publicación guardada</string>
+    <string name="muro_error_imagen">No se pudo cargar la imagen</string>
+    <string name="muro_permiso_denegado">Sin permiso no se puede leer la galería. Puedes activarlo en Ajustes.</string>
+    <string name="muro_no_miembro">No tienes acceso al muro de esta huerta.</string>
+    <string name="muro_autor_desconocido">Miembro</string>
+    <string name="detalle_ir_al_muro">Ir al muro</string>
+    <string name="detalle_ver_muro_solo_lectura">Ver publicaciones (solo lectura)</string>
+    <string name="detalle_unirse_huerta">Unirse a esta huerta</string>
 
     <!-- Texto de nav header-->
     <string name="user">Usuario</string>
     <string name="image">Imagen usuario</string>
+    <!-- Autenticación — títulos y enlaces -->
+    <string name="auth_login_welcome">Bienvenido</string>
+    <string name="auth_login_subtitle">Ingresa para seguir cultivando con HuertaConecta</string>
+    <string name="auth_register_welcome">Crea tu cuenta</string>
+    <string name="auth_register_subtitle">Únete y gestiona tu huerta desde un solo lugar</string>
+    <string name="login_register_footer">¿No tienes cuenta? Regístrate</string>
+    <string name="register_login_footer">¿Ya tienes cuenta? Inicia sesión aquí</string>
+    <string name="link_register">Regístrate</string>
+    <string name="link_login">Inicia sesión aquí</string>
+    <string name="auth_card_hint_login">Accede con tus credenciales</string>
+    <string name="auth_card_hint_register">Completa los datos para registrarte</string>
+
     <!-- Texto de login -->
-    <string name="tvLogin">Iniciar sesion</string>
+    <string name="tvLogin">Iniciar sesión</string>
     <string name="etCorreo">Ingresa tu correo</string>
     <string name="etContraseña">Ingresa tu contraseña</string>
     <string name="cbRecordar">Recordar contraseña</string>

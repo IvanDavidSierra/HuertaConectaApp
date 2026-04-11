@@ -5,308 +5,330 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:fillViewport="true"
+    android:background="@color/backgroundSecondary"
     tools:context=".views.HomeFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:orientation="vertical">
 
+        <!-- ── BIENVENIDA ─────────────────────────────────────────────────── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/primaryColor"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="32dp">
 
+            <TextView
+                android:id="@+id/tvBienvenida"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¡Bienvenido!"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:alpha="0.85" />
+
+            <TextView
+                android:id="@+id/tvNombreUsuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Usuario"
+                android:textColor="@color/white"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:layout_marginTop="2dp" />
+
+            <TextView
+                android:id="@+id/tvCorreoUsuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:alpha="0.75"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- ── TARJETAS DE ESTADÍSTICAS ───────────────────────────────────── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp">
+
+            <!-- Huertas -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/backgroundPrimary">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/tvCountHuertas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="—"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primaryColor" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Huertas"
+                        android:textSize="12sp"
+                        android:textColor="@color/textSecondary"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Cultivos -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="4dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/backgroundPrimary">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/tvCountCultivos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="—"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primaryColor" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cultivos"
+                        android:textSize="12sp"
+                        android:textColor="@color/textSecondary"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Publicaciones -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/backgroundPrimary">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/tvCountPublicaciones"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="—"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primaryColor" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Posts"
+                        android:textSize="12sp"
+                        android:textColor="@color/textSecondary"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <!-- ── ACCESOS RÁPIDOS ─────────────────────────────────────────────── -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="12dp"
             app:cardElevation="2dp"
-            app:cardBackgroundColor="#F1F8E9"
-            app:strokeWidth="1dp"
-            app:strokeColor="#DCEDC8">
+            app:cardBackgroundColor="@color/backgroundPrimary">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="32dp"
-                android:gravity="center">
+                android:padding="16dp">
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/home_hero_title"
-                    android:textAlignment="center"
-                    android:textColor="@color/primaryColor"
-                    android:textSize="@dimen/text_hero"
-                    android:textStyle="bold"
-                    android:lineSpacingExtra="4dp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="@string/home_hero_description"
-                    android:textAlignment="center"
-                    android:textColor="@color/secondaryColor"
-                    android:textSize="@dimen/text_body"
-                    android:alpha="0.8"/>
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_hero_start"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="@string/home_hero_button"
-                    android:paddingHorizontal="40dp"
-                    android:paddingVertical="12dp"
-                    app:cornerRadius="30dp"
-                    android:backgroundTint="@color/primaryColor"
-                    android:textSize="@dimen/text_body"
-                    android:textAllCaps="false"
-                    android:textStyle="bold" />
+                    android:text="Acceso rápido"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textPrimary"
+                    android:layout_marginBottom="12dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnAccesoHuertas"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:text="Mis Huertas"
+                        android:textSize="13sp"
+                        android:textAllCaps="false"
+                        android:backgroundTint="@color/primaryColor"
+                        style="@style/Widget.Material3.Button" />
+
+                    <Button
+                        android:id="@+id/btnAccesoServicios"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:text="Servicios"
+                        android:textSize="13sp"
+                        android:textAllCaps="false"
+                        android:textColor="@color/primaryColor"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        app:strokeColor="@color/primaryColor" />
+
+                </LinearLayout>
+
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- ¿Por que elegirnos? -->
+        <!-- ── SEPARADOR ──────────────────────────────────────────────────── -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="8dp"
+            android:background="@color/borderColor" />
+
+        <!-- ── CONTENIDO INFORMATIVO (existente) ──────────────────────────── -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingVertical="24dp">
+            android:paddingHorizontal="20dp"
+            android:paddingBottom="20dp">
 
+            <!-- Hero -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#F1F8E9"
+                app:strokeWidth="1dp"
+                app:strokeColor="#DCEDC8">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_hero_title"
+                        android:textAlignment="center"
+                        android:textColor="@color/primaryColor"
+                        android:textSize="@dimen/text_title"
+                        android:textStyle="bold"
+                        android:lineSpacingExtra="4dp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/home_hero_description"
+                        android:textAlignment="center"
+                        android:textColor="@color/secondaryColor"
+                        android:textSize="@dimen/text_small"
+                        android:alpha="0.8" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Beneficios -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:text="@string/home_benefits_title"
-                android:textSize="@dimen/text_title"
+                android:textSize="@dimen/text_body"
                 android:textStyle="bold"
-                android:textColor="@color/textPrimary"/>
-
+                android:textColor="@color/textPrimary" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="4dp"
                 android:text="@string/home_benefits_description"
-                android:textSize="@dimen/text_subtitle"
-                android:textColor="@color/textPrimary"
-                android:alpha="0.7"/>
+                android:textSize="13sp"
+                android:textColor="@color/secondaryColor"
+                android:alpha="0.8" />
 
-            <LinearLayout
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="16dp"
+                android:text="@string/home_benefits_item1_title"
+                android:textSize="@dimen/text_small"
+                android:textStyle="bold"
+                android:textColor="@color/primaryColor" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_benefits_item1_description"
+                android:textSize="13sp"
+                android:textColor="@color/secondaryColor"
+                android:alpha="0.8" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/home_benefits_item1_title"
-                    android:textSize="@dimen/text_body"
-                    android:textStyle="bold"
-                    android:textColor="@color/primaryColor"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/home_benefits_item1_description"
-                    android:textSize="14sp"
-                    android:textColor="@color/secondaryColor"
-                    android:alpha="0.8"
-                    android:layout_marginBottom="16dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/home_benefits_item2_title"
+                android:textSize="@dimen/text_small"
+                android:textStyle="bold"
+                android:textColor="@color/primaryColor" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_benefits_item2_description"
+                android:textSize="13sp"
+                android:textColor="@color/secondaryColor"
+                android:alpha="0.8" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/home_benefits_item2_title"
-                    android:textSize="@dimen/text_body"
-                    android:textStyle="bold"
-                    android:textColor="@color/primaryColor"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/home_benefits_item2_description"
-                    android:textSize="14sp"
-                    android:textColor="@color/secondaryColor"
-                    android:alpha="0.8"
-                    android:layout_marginBottom="16dp"/>
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_features_more"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="@string/home_benefits_button"
-                    app:strokeColor="@color/primaryColor"
-                    android:textColor="@color/primaryColor"
-                    app:cornerRadius="12dp"
-                    android:textAllCaps="false"/>
-            </LinearLayout>
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#EEEEEE"/>
-
-        <!-- Sobre nosotros -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingVertical="24dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/home_about_title"
-                android:textSize="@dimen/text_title"
-                android:textStyle="bold"
-                android:textColor="@color/textPrimary"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/home_about_description"
-                android:textSize="@dimen/text_subtitle"
-                android:textColor="@color/secondaryColor"
-                android:layout_marginBottom="16dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/home_about_item1_title"
-                android:textSize="@dimen/text_body"
-                android:textStyle="bold"
-                android:textColor="@color/primaryColor"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/home_about_item1_description"
-                android:textSize="14sp"
-                android:textColor="@color/secondaryColor"
-                android:alpha="0.8"
-                android:layout_marginBottom="16dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/home_about_item2_title"
-                android:textSize="@dimen/text_body"
-                android:textStyle="bold"
-                android:textColor="@color/primaryColor"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/home_about_item2_description"
-                android:textSize="14sp"
-                android:textColor="@color/secondaryColor"
-                android:alpha="0.8"/>
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#EEEEEE"/>
-
-        <!-- Nuestros servicios -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingVertical="24dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/home_services_title"
-                android:textSize="@dimen/text_title"
-                android:textStyle="bold"
-                android:textColor="@color/textPrimary"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/home_services_description"
-                android:textSize="@dimen/text_subtitle"
-                android:textColor="@color/textPrimary"
-                android:alpha="0.7"
-                android:layout_marginBottom="16dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/home_services_item1_title"
-                android:textSize="@dimen/text_body"
-                android:textStyle="bold"
-                android:textColor="@color/primaryColor"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/home_services_item1_description"
-                android:textSize="14sp"
-                android:textColor="@color/secondaryColor"
-                android:layout_marginBottom="16dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/home_services_item2_title"
-                android:textSize="@dimen/text_body"
-                android:textStyle="bold"
-                android:textColor="@color/primaryColor"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/home_services_item2_description"
-                android:textSize="14sp"
-                android:textColor="@color/secondaryColor"/>
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#EEEEEE"/>
-
-        <!-- SECCIÓN 5: CÓMO FUNCIONA -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingVertical="24dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/home_how_title"
-                android:textSize="@dimen/text_title"
-                android:textStyle="bold"
-                android:textColor="@color/textPrimary"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/home_how_description"
-                android:textSize="@dimen/text_subtitle"
-                android:textColor="@color/textPrimary"
-                android:layout_marginBottom="16dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/home_how_step1_title"
-                android:textSize="@dimen/text_body"
-                android:textStyle="bold"
-                android:textColor="@color/primaryColor"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/home_how_step1_description"
-                android:textSize="14sp"
-                android:textColor="@color/secondaryColor"/>
-        </LinearLayout>
     </LinearLayout>
+
 </androidx.core.widget.NestedScrollView>

@@ -1,9 +1,9 @@
 package co.ue.edu.huertaconectaapp.views;
 
-import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.text.SpannableString;
@@ -80,14 +80,23 @@ public class LoginFragment extends Fragment {
         btnIngresar.setOnClickListener(v -> login());
 
         TextView tvRegistrate = view.findViewById(R.id.tvRegistrate);
-        SpannableString span = new SpannableString("¿No tienes cuenta? Registrate");
-        span.setSpan(new ForegroundColorSpan(Color.parseColor("#6200EE")), 19, 29, 0);
-        span.setSpan(new ClickableSpan() {
-            @Override
-            public void onClick(@NonNull View widget) {
-                ((MainActivity) getActivity()).loadFragment(new RegisterFragment());
-            }
-        }, 19, 29, 0);
+        String footer = getString(R.string.login_register_footer);
+        String linkRegister = getString(R.string.link_register);
+        SpannableString span = new SpannableString(footer);
+        int start = footer.indexOf(linkRegister);
+        if (start >= 0) {
+            int end = start + linkRegister.length();
+            int linkColor = ContextCompat.getColor(requireContext(), R.color.primaryColor);
+            span.setSpan(new ForegroundColorSpan(linkColor), start, end, 0);
+            span.setSpan(new ClickableSpan() {
+                @Override
+                public void onClick(@NonNull View widget) {
+                    if (getActivity() instanceof MainActivity) {
+                        ((MainActivity) getActivity()).loadFragment(new RegisterFragment());
+                    }
+                }
+            }, start, end, 0);
+        }
         tvRegistrate.setText(span);
         tvRegistrate.setMovementMethod(LinkMovementMethod.getInstance());
     }

@@ -2,13 +2,20 @@ package co.ue.edu.huertaconectaapp.views;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import android.text.SpannableString;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
+import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import co.ue.edu.huertaconectaapp.MainActivity;
@@ -16,9 +23,6 @@ import co.ue.edu.huertaconectaapp.R;
 import co.ue.edu.huertaconectaapp.controller.AuthController;
 import co.ue.edu.huertaconectaapp.model.AuthResult;
 import co.ue.edu.huertaconectaapp.model.UserRegister;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,7 +31,7 @@ import retrofit2.Response;
  */
 public class RegisterFragment extends Fragment {
     private EditText etNombres, etApellidos, etCorreo, etContrasena, etContrasena2;
-    private Button btnIngresar;
+    private Button btnRegistrar;
     private AuthController authController;
 
 
@@ -75,20 +79,44 @@ public class RegisterFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_register,container,false);
+        View view = inflater.inflate(R.layout.fragment_register, container, false);
+        if (getActivity() instanceof MainActivity) {
+            ((MainActivity) getActivity()).showMenu(false);
+        }
         initObjects(view);
         return view;
-
     }
-    private void initObjects(View view){
+
+    private void initObjects(View view) {
         etNombres = view.findViewById(R.id.etNombres);
         etApellidos = view.findViewById(R.id.etApellidos);
         etCorreo = view.findViewById(R.id.etRegisterCorreo);
         etContrasena = view.findViewById(R.id.etRegisterContrasena);
         etContrasena2 = view.findViewById(R.id.etRegisterContrasena2);
-        btnIngresar = view.findViewById(R.id.btnIngresar);
+        btnRegistrar = view.findViewById(R.id.btnRegistrar);
         authController = new AuthController();
-        btnIngresar.setOnClickListener(v->register());
+        btnRegistrar.setOnClickListener(v -> register());
+
+        TextView tvIniciaSesion = view.findViewById(R.id.tvIniciaSesion);
+        String footer = getString(R.string.register_login_footer);
+        String linkLogin = getString(R.string.link_login);
+        SpannableString span = new SpannableString(footer);
+        int start = footer.indexOf(linkLogin);
+        if (start >= 0) {
+            int end = start + linkLogin.length();
+            int linkColor = ContextCompat.getColor(requireContext(), R.color.primaryColor);
+            span.setSpan(new ForegroundColorSpan(linkColor), start, end, 0);
+            span.setSpan(new ClickableSpan() {
+                @Override
+                public void onClick(@NonNull View widget) {
+                    if (getActivity() instanceof MainActivity) {
+                        ((MainActivity) getActivity()).loadFragment(new LoginFragment());
+                    }
+                }
+            }, start, end, 0);
+        }
+        tvIniciaSesion.setText(span);
+        tvIniciaSesion.setMovementMethod(LinkMovementMethod.getInstance());
     }
     private void register() {
         String nombre = etNombres.getText().toString();

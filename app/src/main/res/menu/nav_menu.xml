@@ -1,42 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn ="navigation_view">
+    tools:showIn="navigation_view">
 
-    <group
-        android:checkableBehavior="single">
+    <group android:checkableBehavior="single">
 
         <item
             android:id="@+id/nav_home"
-            android:title="@string/home"
-            />
+            android:icon="@android:drawable/ic_menu_compass"
+            android:title="@string/home" />
+
+        <item
+            android:id="@+id/nav_huertas"
+            android:icon="@android:drawable/ic_menu_mapmode"
+            android:title="Explorar Huertas" />
+
+        <item
+            android:id="@+id/nav_mis_huertas"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="Mis Huertas" />
+
         <item
             android:id="@+id/nav_about"
-            android:title="@string/about"
-            />
+            android:icon="@android:drawable/ic_menu_info_details"
+            android:title="@string/about" />
+
         <item
             android:id="@+id/nav_service"
-            android:title="@string/service"
-            />
+            android:icon="@android:drawable/ic_menu_manage"
+            android:title="@string/service" />
+
         <item
             android:id="@+id/nav_howItWorks"
-            android:title="@string/howItWorks"
-            />
+            android:icon="@android:drawable/ic_menu_help"
+            android:title="@string/howItWorks" />
+
         <item
             android:id="@+id/nav_contact"
-            android:title="@string/contact"
-        />
+            android:icon="@android:drawable/ic_menu_call"
+            android:title="@string/contact" />
+
     </group>
-    <item
-        android:title="">
+
+    <item android:title="">
         <menu>
             <item
                 android:id="@+id/nav_auth"
-                android:title="@string/auth"
-                />
+                android:icon="@android:drawable/ic_lock_power_off"
+                android:title="@string/auth" />
         </menu>
-
     </item>
-
 
 </menu>

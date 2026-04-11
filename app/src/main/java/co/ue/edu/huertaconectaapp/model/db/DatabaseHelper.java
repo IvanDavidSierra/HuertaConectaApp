@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "huerta_conecta.db";
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 4;
 
     private static DatabaseHelper instance;
 
@@ -62,6 +62,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_TITULO_POST = "titulo_post";
     public static final String COL_CONTENIDO_POST = "contenido_post";
     public static final String COL_FECHA_POST = "fecha_post";
+    public static final String COL_IMAGEN_BLOB = "imagen_blob";
+    public static final String COL_AUTOR_CORREO = "autor_correo";
 
     // ── Tabla sesion ──────────────────────────────────────────────────────────
     public static final String TABLE_SESION = "sesion";
@@ -152,6 +154,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             COL_CONTENIDO_POST      + " TEXT, " +
             COL_FECHA_POST          + " TEXT, " +
             COL_ID_USUARIOS_HUERTAS + " INTEGER, " +
+            COL_IMAGEN_BLOB         + " BLOB, " +
+            COL_AUTOR_CORREO        + " TEXT, " +
             "FOREIGN KEY (" + COL_ID_USUARIOS_HUERTAS + ") REFERENCES " +
                 TABLE_USUARIOS_HUERTAS + "(" + COL_ID_USUARIOS_HUERTAS + ") ON DELETE CASCADE" +
         ");";

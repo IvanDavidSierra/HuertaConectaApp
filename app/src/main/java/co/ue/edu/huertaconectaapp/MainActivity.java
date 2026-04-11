@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -22,11 +23,13 @@ import com.google.android.material.navigation.NavigationView;
 import co.ue.edu.huertaconectaapp.model.db.DatabaseHelper;
 import co.ue.edu.huertaconectaapp.model.db.dao.SesionDao;
 import co.ue.edu.huertaconectaapp.views.AboutFragment;
-import co.ue.edu.huertaconectaapp.views.CreateHuertaFragment;
 import co.ue.edu.huertaconectaapp.views.ContactFragment;
+import co.ue.edu.huertaconectaapp.views.CreateHuertaFragment;
 import co.ue.edu.huertaconectaapp.views.HomeFragment;
 import co.ue.edu.huertaconectaapp.views.HowItWorksFragment;
+import co.ue.edu.huertaconectaapp.views.HuertasFragment;
 import co.ue.edu.huertaconectaapp.views.LoginFragment;
+import co.ue.edu.huertaconectaapp.views.MisHuertasFragment;
 import co.ue.edu.huertaconectaapp.views.RegisterFragment;
 import co.ue.edu.huertaconectaapp.views.ServicesFragment;
 
@@ -41,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     RegisterFragment registerFragment = new RegisterFragment();
 
     private SesionDao sesionDao;
+    private DrawerLayout drawerLayout;
 
 
     @Override
@@ -57,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawerLayout = findViewById(R.id.main);
+        drawerLayout = findViewById(R.id.main);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -66,8 +70,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
 
         sesionDao = new SesionDao(DatabaseHelper.getInstance(this));
+        drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
 
         if (sesionDao.haySesionActiva()) {
+            actualizarNavHeader(navigationView);
             loadFragment(homeFragment);
             showMenu(true);
         } else {
@@ -83,12 +89,36 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         transaction.replace(R.id.fragment_container, fragment);
         transaction.commit();
     }
+
+    /** Abre un fragment encima del actual y permite volver atrás con el botón atrás. */
+    public void pushFragment(Fragment fragment) {
+        getSupportFragmentManager().beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .addToBackStack(null)
+            .commit();
+    }
+    public void actualizarNavHeader(NavigationView navigationView) {
+        View header = navigationView.getHeaderView(0);
+        TextView tvNombre = header.findViewById(R.id.tvNavNombre);
+        TextView tvCorreo = header.findViewById(R.id.tvNavCorreo);
+        String correo = sesionDao.obtenerCorreo();
+        if (correo != null) {
+            String nombre = correo.contains("@") ? correo.substring(0, correo.indexOf("@")) : correo;
+            tvNombre.setText(nombre.substring(0, 1).toUpperCase() + nombre.substring(1));
+            tvCorreo.setText(correo);
+        }
+    }
+
     public void showMenu(boolean show) {
         Toolbar toolbar = findViewById(R.id.toolbar);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         if (show) {
             toolbar.setVisibility(View.VISIBLE);
+            drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
+            actualizarNavHeader(navigationView);
         } else {
             toolbar.setVisibility(View.GONE);
+            drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
         }
         invalidateOptionsMenu();
     }
@@ -126,6 +156,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             return true;
         } else if (id == R.id.nav_howItWorks) {
             loadFragment(howItWorksFragment);
+            return true;
+        } else if (id == R.id.nav_huertas) {
+            loadFragment(new HuertasFragment());
+            return true;
+        } else if (id == R.id.nav_mis_huertas) {
+            loadFragment(new MisHuertasFragment());
             return true;
         } else if (id == R.id.nav_contact) {
             loadFragment(contactFragment);

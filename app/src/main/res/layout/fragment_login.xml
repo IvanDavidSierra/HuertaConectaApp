@@ -1,52 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:background="@color/backgroundSecondary"
+    android:fillViewport="true">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/tvLogin"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        android:textColor="@color/primaryColor"/>
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/etCorreo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:hint="@string/etCorreo"
-        android:autofillHints="emailAddress"
-        android:inputType="textEmailAddress"/>
-    <EditText
-        android:id="@+id/etContrasena"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:hint="@string/etContraseña"
-        android:autofillHints="password"
-        android:inputType="textPassword"/>
+        <!-- Misma cabecera que Home / detalle huerta -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primaryColor"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="32dp">
 
-    <CheckBox
-        android:id="@+id/cbRecordar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:text="@string/cbRecordar"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/auth_login_welcome"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:alpha="0.85" />
 
-    <Button
-        android:id="@+id/btnIngresar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/btnIngresar"/>
-    <TextView
-        android:id="@+id/tvRegistrate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="¿No tienes cuenta? Registrate"
-        android:layout_marginTop="16dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-</LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/auth_login_subtitle"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:alpha="0.85"
+                android:lineSpacingExtra="2dp" />
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/backgroundPrimary">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tvLogin"
+                    android:textColor="@color/textSecondary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="@string/auth_card_hint_login"
+                    android:textColor="@color/secondaryColor"
+                    android:textSize="12sp"
+                    android:alpha="0.7" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Correo electrónico"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textSecondary" />
+
+                <EditText
+                    android:id="@+id/etCorreo"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/input_background"
+                    android:hint="@string/etCorreo"
+                    android:autofillHints="emailAddress"
+                    android:inputType="textEmailAddress"
+                    android:paddingHorizontal="14dp"
+                    android:textSize="15sp"
+                    android:textColor="@color/textPrimary"
+                    tools:ignore="Autofill" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="Contraseña"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textSecondary" />
+
+                <EditText
+                    android:id="@+id/etContrasena"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/input_background"
+                    android:hint="@string/etContraseña"
+                    android:autofillHints="password"
+                    android:inputType="textPassword"
+                    android:paddingHorizontal="14dp"
+                    android:textSize="15sp"
+                    android:textColor="@color/textPrimary"
+                    tools:ignore="Autofill" />
+
+                <CheckBox
+                    android:id="@+id/cbRecordar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/cbRecordar"
+                    android:textColor="@color/secondaryColor"
+                    android:buttonTint="@color/primaryColor" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnIngresar"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/btnIngresar"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    app:cornerRadius="12dp"
+                    app:backgroundTint="@color/primaryColor" />
+
+                <TextView
+                    android:id="@+id/tvRegistrate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:text="@string/login_register_footer"
+                    android:textSize="14sp"
+                    android:textColor="@color/secondaryColor"
+                    android:lineSpacingExtra="2dp" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>
