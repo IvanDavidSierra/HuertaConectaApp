@@ -107,12 +107,65 @@
     <string name="home_how_step1_title">Diseña y Gestiona</string>
     <string name="home_how_step1_description">Utiliza nuestras herramientas para planificar y monitorear tu huerta.</string>
 
-    <!-- Contenido about -->
+    <!-- Contenido fragment about -->
+    <string name="about_title">Sobre HuertaConecta</string>
+    <string name="about_desc">HuertaConecta nace de la idea de transformar la forma en que las personas interactúan con la naturaleza en entornos urbanos.</string>
+
+    <string name="about_vision_title">Nuestra Visión</string>
+    <string name="about_vision_body">Ser la red global líder en agricultura urbana, empoderando a cada individuo para cultivar sus propios alimentos de forma sostenible y comunitaria.</string>
+
+    <string name="about_values_title">Nuestros Valores</string>
+    <string name="about_value_collab">Colaboración</string>
+    <string name="about_value_sustain">Sostenibilidad</string>
+    <string name="about_value_innov">Innovación</string>
+    <string name="about_value_nature">Amor por la Naturaleza</string>
+    <string name="about_value_edu">Educación</string>
 
     <!-- Contenido service -->
+    <string name="services_title">Nuestros Servicios</string>
+    <string name="services_desc">Descubre cómo HuertaConecta puede ayudarte a potenciar tu huerta y conectar con una comunidad agrícola innovadora.</string>
+
+    <string name="services_card1_icon">🌱</string>
+    <string name="services_card1_title">Gestión de Huertas</string>
+    <string name="services_card1_desc">Administra tus huertas de manera eficiente, registra cultivos, tareas y obtén reportes en tiempo real.</string>
+
+    <string name="services_card2_icon">🤝</string>
+    <string name="services_card2_title">Conexión entre Productores</string>
+    <string name="services_card2_desc">Conecta con otros productores, comparte experiencias y crea redes de colaboración agrícola.</string>
+
+    <string name="services_card3_icon">📈</string>
+    <string name="services_card3_title">Análisis y Reportes</string>
+    <string name="services_card3_desc">Visualiza el progreso de tus cultivos y accede a reportes detallados para mejorar tu producción.</string>
+
+    <string name="services_card4_icon">🎓</string>
+    <string name="services_card4_title">Capacitación y Comunidad</string>
+    <string name="services_card4_desc">Accede a recursos educativos, talleres y participa en una comunidad activa de aprendizaje.</string>
 
     <!-- Contenido how it works -->
+    <string name="how_title">¿Cómo funciona HuertaConecta?</string>
+    <string name="how_desc">Sigue estos sencillos pasos para comenzar a gestionar y potenciar tu huerta con nuestra plataforma.</string>
+
+    <string name="how_step1_icon">📝</string>
+    <string name="how_step1_title">Regístrate</string>
+    <string name="how_step1_desc">Crea tu cuenta en HuertaConecta de forma rápida y sencilla.</string>
+
+    <string name="how_step2_icon">🌿</string>
+    <string name="how_step2_title">Crea tu huerta</string>
+    <string name="how_step2_desc">Agrega información sobre tu huerta, cultivos y tareas.</string>
+
+    <string name="how_step3_icon">🤝</string>
+    <string name="how_step3_title">Conecta y colabora</string>
+    <string name="how_step3_desc">Únete a la comunidad, comparte experiencias y recibe apoyo.</string>
+
+    <string name="how_step4_icon">📊</string>
+    <string name="how_step4_title">Gestiona y crece</string>
+    <string name="how_step4_desc">Lleva el control de tu producción y accede a reportes y recursos.</string>
 
     <!-- Contenido contact -->
-
+    <string name="contact_title">Contáctanos</string>
+    <string name="contact_desc">Hemos creado una plataforma para ayudar a productores, comunidades y empresas a conectar y gestionar sus huertas de manera fácil y eficiente.</string>
+    <string name="contact_hint_name">Tu nombre</string>
+    <string name="contact_hint_email">Tu email</string>
+    <string name="contact_hint_message">Tu mensaje</string>
+    <string name="contact_btn_send">Enviar</string>
 </resources>

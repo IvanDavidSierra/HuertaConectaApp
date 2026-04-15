@@ -1,7 +1,29 @@
 <resources>
+    <!-- Text sizes -->
     <dimen name="text_small">14sp</dimen>
     <dimen name="text_body">16sp</dimen>
     <dimen name="text_subtitle">20sp</dimen>
     <dimen name="text_title">24sp</dimen>
     <dimen name="text_hero">32sp</dimen>
+
+    <!-- Generic margins and paddings -->
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing_medium">16dp</dimen>
+    <dimen name="spacing_large">24dp</dimen>
+    <dimen name="spacing_extra_large">32dp</dimen>
+
+    <!-- Card dimensions -->
+    <dimen name="card_corner_radius">16dp</dimen>
+    <dimen name="card_elevation">4dp</dimen>
+
+    <!-- Specific for About Screen -->
+    <dimen name="about_screen_padding">16dp</dimen>
+    <dimen name="about_card_radius">24dp</dimen>
+    <dimen name="about_card_padding_h">24dp</dimen>
+    <dimen name="about_card_padding_v">32dp</dimen>
+    <dimen name="about_title_margin_bottom">12dp</dimen>
+    <dimen name="about_section_spacing">32dp</dimen>
+    <dimen name="about_chip_padding_h">16dp</dimen>
+    <dimen name="about_chip_padding_v">8dp</dimen>
+    <dimen name="about_chip_spacing">12dp</dimen>
 </resources>
